@@ -1,0 +1,12 @@
+abilities:
+  - name: "double_tap",
+    display_name: "Double Tap"
+    description: '+1 Shooting/+1 Damage'
+
+  - name: "3_round_burst",
+    display_name: "3 Round Burst"
+    description: '+2 Shooting/+2 Damage'
+
+  - name: "auto",
+    display_name: "Automatic Fire",
+    description: "Make a shooting roll at -2 with # of dice equal to the weapon's RoF"

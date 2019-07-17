@@ -1,46 +1,46 @@
 from templates.base_template import CardTemplate
-from PIL import Image, ImageDraw, ImageFont
-from notes import DEFAULT_NOTES
+from PIL import ImageFont
+import yaml
 
 
 class WeaponTemplate(CardTemplate):
     name = 'weapon'
-    height = 200
-    width = 400
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.offset = 0
         self.canvas = None
+        with open('default_weapons.yaml', 'r', newline='') as f:
+            self.default_weapons = yaml.load(f)
 
-    # context fields - name, damage, rof, ap, notes1, notes2, notes3
-    def generate(self, context, background=None):
-        img = super.generate(context, background)
+    # context fields - name, damage, range, rof, ap
+    def generate(self, context):
+        img = super().generate(context)
+
+        # Find inherited weapon stats if applicable
+        default = self.default_weapons.get(context.get('inherit', ''), {})
+        data = default.update(context)
 
         # draw title
-        self.text_line(context.get('name', self.name), 10, 17)
+        self.text_line(data.get('name', ''), 10, 17)
 
         # draw damage
-        self.text_line('Damage: ' + context.get('damage', ''), 20, 15)
+        self.text_line('Damage: ' + data.get('damage', ''), 20, 15)
 
         # draw range
-        if context.get('range'):
-            self.text_line('Range: ' + context.get('range', ''), 20, 15)
+        if data.get('range'):
+            self.text_line('Range: ' + data.get('range', ''), 20, 15)
 
         # draw RoF
-        if context.get('rof'):
-            self.text_line('RoF: ' + context.get('rof', ''), 20, 15)
+        if data.get('rof'):
+            self.text_line('RoF: ' + data.get('rof', ''), 20, 15)
 
         # draw AP
-        if context.get('ap', 0):
-            self.text_line('AP: ' + context.get('ap', ''), 20, 15)
+        if data.get('ap', 0):
+            self.text_line('AP: ' + data.get('ap', ''), 20, 15)
 
-        # draw notes
-        for note in context.get('notes', []):
-            if note in DEFAULT_NOTES:
-                self.text_line('{name}: {description}'.format(**(DEFAULT_NOTES[note])), 20, 15)
-
-        for note in context.get('extra_notes', []):
-            self.text_line(note, 20, 15)
+        # draw notes (additional rules for weapon e.g. fragile, high crit, shotgun)
+        # draw abilities (additional things you can do with weapon e.g. 3RB, auto)
 
         return img
 

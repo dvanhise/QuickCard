@@ -4,6 +4,7 @@ from templates.i_template import ItemTemplate
 from templates.v_template import VehicleTemplate
 
 import csv
+import yaml
 import sys
 import os
 from random import randint
@@ -13,30 +14,40 @@ OUTPUT_DIR = 'output'
 
 
 def main():
+    # Arguments are a list of yaml/json/csv to make cards from
     if len(sys.argv) < 2:
         sys.exit(1)
 
-    # load templates
-    template_classes = [EnemyTemplate, WeaponTemplate, ItemTemplate, VehicleTemplate]
+    # card files with fields: title, type(item, weapon, armor), inherit, [any replacement fields], description,
+    # abilities, additional_abilites, count
+
+    # TODO: 2.5" x 3.5" cards by default
+
+    for input_file in sys.argv[1:]:
+        if input_file.lower().endswith(('.yml', '.yaml')):
+            with open(input_file, 'r', newline='') as f:
+                reader = yaml.load(f)
+        elif input_file.lower().endswith('.csv'):
+            pass
+        elif input_file.lower().endswith('.json'):
+            pass
+        else:
+            raise ValueError('Unable to handle file extension of %s' % input_file)
 
     # map template names to instances
-    tmpl = {cls.name: cls() for cls in template_classes}
+    templates = {cls.name: cls() for cls in [EnemyTemplate, WeaponTemplate, ItemTemplate, VehicleTemplate]}
 
-    input_file = sys.argv[1]
-    with open(input_file, 'r', newline='') as f:
-        reader = csv.DictReader(f)
-
+    counter = 1
     for row in reader:
-        if 'template' not in row or row['template'] not in tmpl:
+        if row.get('type') not in templates:
             continue
 
-        template = tmpl[row['template']]
-        image = template.generate(row, background=row.get('background'))
-        image.save(os.path.join(OUTPUT_DIR, get_file_name(row)))
+        template = templates[row['type']]
+        image = template.generate(row)
 
-
-def get_file_name(row):
-    return row.get('filename', row['template'] + str(randint(100, 10000))) + '.png'
+        for _ in range(row.get('count', 1)):
+            image.save(os.path.join(OUTPUT_DIR, '%s-%s.png' % (row['type'], counter)))
+            counter += 1
 
 
 if __name__ == '__main__':
