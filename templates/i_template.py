@@ -1,7 +1,8 @@
+from templates.base_template import CardTemplate
 from PIL import Image, ImageDraw, ImageFont
 
 
-class ItemTemplate:
+class ItemTemplate(CardTemplate):
     name = 'item'
     height = 150
     width = 300

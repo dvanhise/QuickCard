@@ -1,36 +1,50 @@
+from templates.base_template import CardTemplate
 from PIL import Image, ImageDraw, ImageFont
+from notes import DEFAULT_NOTES
 
 
-class WeaponTemplate:
+class WeaponTemplate(CardTemplate):
     name = 'weapon'
     height = 200
     width = 400
 
-    # context fields - name, damage, rof, ap, notes1, notes2, notes3
-    def generate(self, context):
-        img = Image.new('RGB', (self.width, self.height), color='white')
-        d = ImageDraw.Draw(img)
+    def __init__(self):
+        self.offset = 0
+        self.canvas = None
 
-        # draw border
-        d.rectangle(((5, 5), (self.width - 5, self.height - 5)), outline=(30, 30, 30), width=5)
+    # context fields - name, damage, rof, ap, notes1, notes2, notes3
+    def generate(self, context, background=None):
+        img = super.generate(context, background)
 
         # draw title
-        fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', 17)
-        d.text((15, 10), context.get('name', self.name), font=fnt, fill=(30, 30, 30))
+        self.text_line(context.get('name', self.name), 10, 17)
 
         # draw damage
-        fnt = ImageFont.truetype('/Library/Fonts/Arial.ttf', 15)
-        d.text((15, 30), 'Damage: ' + context.get('damage', ''), font=fnt, fill=(30, 30, 30))
+        self.text_line('Damage: ' + context.get('damage', ''), 20, 15)
+
+        # draw range
+        if context.get('range'):
+            self.text_line('Range: ' + context.get('range', ''), 20, 15)
 
         # draw RoF
-        d.text((15, 50), 'RoF: ' + context.get('rof', ''), font=fnt, fill=(30, 30, 30))
+        if context.get('rof'):
+            self.text_line('RoF: ' + context.get('rof', ''), 20, 15)
 
         # draw AP
-        d.text((15, 70), 'AP: ' + context.get('ap', ''), font=fnt, fill=(30, 30, 30))
+        if context.get('ap', 0):
+            self.text_line('AP: ' + context.get('ap', ''), 20, 15)
 
         # draw notes
-        d.text((15, 90), context.get('notes1', ''), font=fnt, fill=(30, 30, 30))
-        d.text((15, 105), context.get('notes2', ''), font=fnt, fill=(30, 30, 30))
-        d.text((15, 130), context.get('notes3', ''), font=fnt, fill=(30, 30, 30))
+        for note in context.get('notes', []):
+            if note in DEFAULT_NOTES:
+                self.text_line('{name}: {description}'.format(**(DEFAULT_NOTES[note])), 20, 15)
+
+        for note in context.get('extra_notes', []):
+            self.text_line(note, 20, 15)
 
         return img
+
+    def text_line(self, text, offset, size, fill=(30, 30, 30)):
+        self.offset += offset
+        fnt = ImageFont.truetype(self.font, size)
+        self.canvas.text((15, self.offset), text, font=fnt, fill=fill)

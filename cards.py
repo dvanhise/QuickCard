@@ -31,7 +31,7 @@ def main():
             continue
 
         template = tmpl[row['template']]
-        image = template.generate(row)
+        image = template.generate(row, background=row.get('background'))
         image.save(os.path.join(OUTPUT_DIR, get_file_name(row)))
 
 
