@@ -13,7 +13,7 @@ class WeaponTemplate(CardTemplate):
         with open('default_weapons.yaml', 'r', newline='') as f:
             self.default_weapons = yaml.load(f)
 
-    # context fields - name, damage, range, rof, ap
+    # context fields - name, damage, range, rof, ap, shots
     def generate(self, context):
         img = super().generate(context)
 

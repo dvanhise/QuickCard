@@ -1,0 +1,9 @@
+- name: "Rusty Revolver"
+  type: weapon
+  inherit: "revolver"
+  count: 2
+  additional_notes:
+    - fragile
+
+- inherit: "crossbow"
+  type: weapon
