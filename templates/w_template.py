@@ -15,11 +15,11 @@ class WeaponTemplate(CardTemplate):
 
     # context fields - name, damage, range, rof, ap, shots
     def generate(self, context):
-        img = super().generate(context)
+        super().generate(context)
 
         # Find inherited weapon stats if applicable
-        default = self.default_weapons.get(context.get('inherit', ''), {})
-        data = default.update(context)
+        data = self.default_weapons.get(context.get('inherit', ''), {})
+        data.update(context)
 
         # draw title
         self.text_line(data.get('name', ''), 10, 17)
@@ -32,17 +32,19 @@ class WeaponTemplate(CardTemplate):
             self.text_line('Range: ' + data.get('range', ''), 20, 15)
 
         # draw RoF
-        if data.get('rof'):
-            self.text_line('RoF: ' + data.get('rof', ''), 20, 15)
+        rof = data.get('rof', 1)
+        if rof > 1:
+            self.text_line('RoF: %d' % rof, 20, 15)
 
         # draw AP
-        if data.get('ap', 0):
-            self.text_line('AP: ' + data.get('ap', ''), 20, 15)
+        ap = data.get('ap', 0)
+        if ap > 0:
+            self.text_line('AP: %d' % ap, 20, 15)
 
         # draw notes (additional rules for weapon e.g. fragile, high crit, shotgun)
         # draw abilities (additional things you can do with weapon e.g. 3RB, auto)
 
-        return img
+        return self.image
 
     def text_line(self, text, offset, size, fill=(30, 30, 30)):
         self.offset += offset

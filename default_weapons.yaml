@@ -1,20 +1,20 @@
 crossbow:
-  - name: "Crossbow"
-    type: "ranged"
-    range: "12/24/48"
-    rof: 1
-    ap: 2
-    damage: "2d6"
-    abilities:
-      - slow_reload
+  name: "Crossbow"
+  type: "ranged"
+  range: "12/24/48"
+  rof: 1
+  ap: 2
+  damage: "2d6"
+  abilities:
+    - slow_reload
 
 revolver:
-  - name: "Revolver"
-    type: "ranged"
-    range: "12/24/48"
-    rof: 1
-    ap: 1
-    shots: 6
-    damage: "2d6+1"
-    abilities:
-      - semi_auto
+  name: "Revolver"
+  type: "ranged"
+  range: "12/24/48"
+  rof: 1
+  ap: 1
+  shots: 6
+  damage: "2d6+1"
+  abilities:
+    - semi_auto
