@@ -1,0 +1,39 @@
+<html>
+<head>
+    <style>
+        .content {
+            height: {{ card_height - 22 }}px;
+            width: {{ card_width - 22 }}px;
+            display: inline-block;
+            border: 4px solid #333;
+            margin: 3px;
+            padding: 4px;
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h3 style="margin:3px">{{ name }}</h3>
+        <div style="max-width:{{ card_width - 140 }}px">
+            <span style="margin-right:15px"><strong>Acc/TS:</strong> {{acc_ts}}</span>
+            <span style="margin-right:15px"><strong>Toughness:</strong> {{toughness}}</span>
+            <span style="margin-right:15px"><strong>Crew:</strong> {{crew}}</span>
+            {% if climb != "" %}
+            <span style="margin-right:15px"><strong>Climb:</strong> {{climb}}</span>
+            {% endif %}
+        </div>
+        <hr>
+        {% for note in notes + additional_notes %}
+        <p><strong>{{ note.name }}:</strong> {{ note.description }}</p>
+        {% endfor %}
+
+        {% if weapons|count > 0 %}
+        <p>
+            Weapons: {% for weapon in weapons %}{{ weapon.name }} {% endfor %}
+        </p>
+        {% endif %}
+    </div>
+    <div></div>
+</body>
+</html>

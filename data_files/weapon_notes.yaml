@@ -1,0 +1,173 @@
+double_tap:
+  name: "Double Tap"
+  description: "+1 Shooting/+1 Damage"
+
+3_round_burst:
+  name: "3 Round Burst"
+  description: "+2 Shooting/+2 Damage"
+
+auto:
+  name: "Automatic Fire"
+  description: "Make a Shooting roll at -2 with dice up to the weapon's RoF"
+
+aim:
+  name: "Aim"
+  description: "+2 Shooting/Throwing if character doesn't move or take other actions"
+
+rapid_attack_ranged:
+  name: "Rapid Attack"
+  description: "Fire up to six shots at -4 Shooting"
+
+rapid_attack_melee:
+  name: "Rapid Attack"
+  description: "-2 Parry; Make up to 3 Fighting attacks (+Wild Die) at -4"
+
+shotgun:
+  name: "Shotgun"
+  description: "+2 Shooting; Damage 3d6/2d6/1d6 at close/medium/long range"
+
+flamethrower:
+  name: "Flamethrower"
+  description: "+2 Shooting, uses Cone Template, target's Agility vs Shooting to dodge"
+
+entangling:
+  name: "Entangling"
+  description: "Entangles on raise (instead of damage), use raise die for opposed escape roll"
+
+double_barrel:
+  name: "Double-Barrel"
+  description: "Weapon may fire at RoF 2 as per automatic fire rules"
+
+cover:
+  name: "Cover"
+  description: "Provides cover on protected side vs. ranged attacks"
+
+strong_defense:
+  name: "Strong Defense"
+  description: "+1 Parry while holding this weapon in your hand"
+
+strong_offence:
+  name: "Strong Offence"
+  description: "+1 to Fighting rolls made with this weapon"
+
+reach:
+  name: "Reach"
+  description: "+1\" melee reach, other hand cannot attack in the same round you use this weapon"
+
+always_ready:
+  name: "Always Ready"
+  description: "No need to be drawn"
+
+small_area_effect:
+  name: "Area Effect"
+  description: "Weapon uses a Small Burst Template"
+
+medium_area_effect:
+  name: "Area Effect"
+  description: "Weapon uses a Medium Burst Template"
+
+large_area_effect:
+  name: "Area Effect"
+  description: "Weapon uses a Large Burst Template"
+
+scope:
+  name: "Scope"
+  description: "+2 Shooting at medium range if player does not move this round"
+
+bipod:
+  name: "Bipod"
+  description: "Action to deploy; reduces auto fire penalty to -1, retracted when moved"
+
+mounted:
+  name: "Mounted Weapon"
+  description: "Reduces auto fire penalty to -1; weapon can't be moved"
+
+high_raise:
+  name: "High Raise Die"
+  description: "+1 step to extra damage die gained on a raise"
+
+very_high_raise:
+  name: "Very High Raise Die"
+  description: "+2 steps to extra damage die gained on a raise"
+
+extreme_raise:
+  name: "Extreme Raise Die"
+  description: "+3 steps to extra damage die gained on a raise"
+
+natural_weapon:
+  name: "Natural Weapon"
+  description: "Weapon is attached to the user and is always ready"
+
+ignores_armor:
+  name: "Ignores Armor"
+  description: "Ignores all toughness from armor"
+
+blugeoning:
+  name: "Blugeoning"
+  description: "Has AP 2 vs. rigid armor"
+
+
+
+fragile:
+  name: "Fragile"
+  description: "Toughness 8, automatically breaks in melee if you roll snake eyes on your attack"
+
+unwieldy:
+  name: "Unwieldy"
+  description: "-1 Parry and -1 Pace when holding this weapon"
+
+bent:
+  name: "Bent"
+  description: "-1 to ability roles with using this weapon"
+
+dangerous:
+  name: "Dangerous"
+  description: "Use Innocent Bystander rules in melee, hit self on snake eyes"
+
+one_shot:
+  name: "One Shot"
+  description: "This weapon can only be used once"
+
+unstable:
+  name: "Unstable"
+  description: "Explodes if you roll 1 on the Shooting die, damaging wielder"
+
+snapfire:
+  name: "Snapfire"
+  description: "-2 to Shooting rolls if player moves on turn"
+
+no_movement:
+  name: "No Movement"
+  description: "May not move on the same turn the gun is fired"
+
+vulnerable_defender:
+  name: "Vulnerable Defender"
+  description: "This does not count as a weapon for the \"Unarmed Defender\" rule"
+
+avoidable:
+  name: "Avoidable"
+  description: "Attacks can be avoided using the “Diving for Cover” rules"
+
+two_handed:
+  name: "Two-Handed"
+  description: "Only effective in melee with used with both hands"
+
+weak_defense:
+  name: "Weak Defense"
+  description: "-1 Parry while holding this weapon"
+
+slow_reload:
+  name: "Slow Reload"
+  description: "Requires an action to reload"
+
+very_slow_reload:
+  name: "Very Slow Reload"
+  description: "Requires two actions to reload"
+
+no_raise:
+  name: "No Raise Die"
+  description: "No additional damage on a raise"
+
+low_raise:
+  name: "Low Raise Die"
+  description: "-1 step to extra damage die gained on a raise"

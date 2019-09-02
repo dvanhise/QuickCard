@@ -1,0 +1,31 @@
+shield:
+  name: "Shield"
+  description: "+2 Armor to ranged shots from shielded side"
+
+kevlar:
+  name: "Kevlar"
+  description: "Negates 4 AP and provides +2 Armor against bullets"
+
+bulky:
+  name: "Bulky"
+  descripton": "-1 Parry while wearing this armor"
+
+awkward:
+  name: "Awkward"
+  description: "-1 Pace, and standing from prone costs 3\" instead of 2\""
+
+very_awkward:
+  name: "Very Awkward"
+  description: "Half Pace, cannot run, and standing from prone costs 3\" instead of 2\""
+
+uncomfortable:
+  name: "Uncomfortable"
+  description: "Take fatigue due to Bumps and Bruises when rolling 1 on ability die doing something physical"
+
+muscular_augmentation:
+  name: "Muscular Augmentation"
+  description: "Increses Str one die type, adds +2 Pace, 1d6\" vertical jump"
+
+aim_assist:
+  name: "Aim Assist"
+  description: "Adds +1 to Shooting rolls"

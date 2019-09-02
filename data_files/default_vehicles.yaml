@@ -1,0 +1,74 @@
+compact_car:
+  name: "Contact Car"
+  handling: +1
+  top_speed: 30
+  toughness: 10(3)
+  crew: 1+3
+
+suv:
+  name: "SUV"
+  acc_ts: 20/40
+  toughness: 14(3)
+  crew: 1+7
+
+pickup_truck:
+  name: "Pickup Truck"
+  handling: 0
+  top_speed: 30
+  toughness: 12(2)
+  crew: 1+3
+
+dirt_bike:
+  name: "Dirt Bike"
+  handling: +3
+  top_speed: 20
+  toughness: 7(1)
+  crew: 1
+  notes:
+    50% chance to hit rider
+
+motorcycle:
+  name: "Motorcycle"
+  handling: +2
+  top_speed: 25
+  toughness: 8(2)
+  crew: 1+1
+  notes:
+    50% chance to hit rider
+
+electric_cart:
+  name: "Electric Cart"
+  handling: +1
+  top_speed: 10
+  toughness: 7(1)
+  crew: 1+3
+
+humvee:
+  name: "Humvee"
+  acc_ts: 10/40
+  toughness: 15(4)
+  crew: 1+3
+
+jetpack:
+  name: "Jetpack"
+  acc_ts: 6/12
+  toughness: 7(1)
+  crew: 1
+  climb: 0
+  notes:
+    - hover
+
+forklift:
+  name: "Forklift"
+  acc_ts: 3/6
+  toughness: 11(3)
+  crew: 1
+
+futuristic_transport:
+  name: "Futuristic Transport"
+  acc_ts: 20/140
+  toughness: 12(2)
+  crew: 1+12
+  climb: 1
+  notes:
+    - hover

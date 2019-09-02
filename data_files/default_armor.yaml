@@ -1,0 +1,51 @@
+
+light_armor:
+  name: "Light Armor"
+  armor: +1
+
+medium_armor:
+  name: "Medium Armor"
+  armor: +2
+
+heavy_armor:
+  name: "Heavy Armor"
+  armor: +3
+
+kevlar_vest:
+  name: "Kevlar Vest"
+  armor: +2
+  notes:
+    - kevlar
+
+future_armor:
+  name: "Future Armor"
+  armor: +6
+
+power_armor:
+  name: "Power Armor"
+  armor: +8
+  notes:
+    - muscular_assist
+    - aim_assist
+
+small_shield:
+  name: "Small Shield"
+  parry: +1
+
+medium_shield:
+  name: "Medium Shield"
+  parry: +1
+  notes:
+    - shield
+
+large_shield:
+  name: "Large Shield"
+  parry: +2
+  notes:
+    - shield
+
+tactical_shield:
+  name: "Tactical Shield"
+  parry: +2
+  notes:
+    -

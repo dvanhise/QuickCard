@@ -1,0 +1,23 @@
+heavy_armor:
+  name: "Heavy Armor"
+  description: "Can only be damaged by Heavy Weapons"
+
+four_wheel_drive:
+  name: "4 Wheel Drive"
+  description: "Treat each inch of difficult terrain as 1.5\" instead of 2\""
+
+stabilizer:
+  name: "Stabilizer"
+  description: "Reduces Unstable Platform penalty to -1"
+
+tracked:
+  name: "Tracked"
+  description: "Treat each inch of difficult terrain as 1.5\" instead of 2\""
+
+air_bags:
+  name: "Air Bags"
+  description: "Passengers roll half damage dice on a collision minus one"
+
+hover:
+  name: "Hover"
+  description: "Vehicle can remain stationary in the air"

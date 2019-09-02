@@ -1,0 +1,344 @@
+
+shortbow:
+  name: "Shortbow"
+  range: "12/24/48"
+  rof: 1
+  ap: 0
+  damage: "2d6"
+
+longbow:
+  name: "Longbow"
+  range: "15/30/60"
+  rof: 1
+  ap: 1
+  damage: "2d6"
+  min_str: d6
+
+crossbow:
+  name: "Crossbow"
+  range: "15/30/60"
+  rof: 1
+  ap: 2
+  damage: "2d6"
+  min_str: d6
+  notes:
+    - slow_reload
+
+sling:
+  name: "Sling"
+  range: "4/8/16"
+  rof: 1
+  ap: 0
+  damage: "Str+d4"
+
+spear_thrower:
+  name: "Atlatl"
+  range: "6/12/24"
+  rof: 1
+  ap: 0
+  damage: "Str+d6"
+
+spear:
+  name: "Spear"
+  range: "3/6/12"
+  rof: 1
+  ap: 0
+  damage: "Str+d6"
+  min_str: d6
+  notes:
+    - reach
+    - strong_defense
+    - two_handed
+
+handaxe:
+  name: "Handaxe"
+  rof: 1
+  damage: "Str+d6"
+  ap: 0
+
+knife:
+  name: "Knife"
+  ap: 0
+  damage: "Str+d4"
+
+brass_knuckles:
+  name: "Brass Knuckles"
+  ap: 0
+  damage: "Str+d4"
+  notes:
+    - vulnerable_defender
+
+club:
+  name: "Club"
+  ap: 0
+  damage: "Str+d6"
+
+mace:
+  name: "Mace"
+  ap: 0
+  damage: "Str+d8"
+  notes:
+    - blugeoning
+
+flail:
+  name: "Flail"
+  ap: 0
+  damage: "Str+d6"
+  notes:
+    - blugeoning
+    - dangerous
+    - very_high_raise
+
+staff:
+  name: "Staff"
+  ap: 0
+  damage: "Str+d4"
+  notes:
+    - reach
+    - strong_defense
+    - two_handed
+
+battle_axe:
+  name: "Battle Axe"
+  ap: 0
+  damage: "Str+d8"
+
+shortsword:
+  name: "Shortsword"
+  ap: 1
+  damage: "Str+d6"
+  notes:
+    - high_raise
+
+longsword:
+  name: "Longsword"
+  ap: 0
+  damage: "Str+d8"
+
+chainsaw:
+  name: "Chainsaw"
+  ap: 2
+  damage: "Str+d12"
+  notes:
+    - unwieldy
+    - dangerous
+    - extreme_raise
+    - two_handed
+
+future_knife:
+  name: "Molecular Knife"
+  ap: 2
+  damage: "Str+d4+2"
+
+future_sword:
+  name: "Molecular Sword"
+  ap: 4
+  damage: "Str+d8+2"
+
+
+
+# Firearms
+
+revolver:
+  name: "Revolver"
+  range: "12/24/48"
+  rof: 1
+  ap: 1
+  damage: "2d6+1"
+  notes:
+    - double_tap
+    - rapid_attack_ranged
+
+pistol:
+  name: "Pistol"
+  range: "12/24/48"
+  rof: 1
+  ap: 1
+  notes:
+    - double_tap
+    - rapid_attack_ranged
+
+flintlock_pistol:
+  name: "Flintlock Pistol"
+  range: "5/10/20"
+  rof: 1
+  damage: "2d6+1"
+  notes:
+    - very_slow_reload
+
+shotgun:
+  name: " Shotgun"
+  range: "12/24/48"
+  rof: 1
+  damage: "3d6"
+  notes:
+    - shotgun
+
+double_barrel_shotgun:
+  name: "Double-Barrel Shotgun"
+  range: "12/24/48"
+  rof: 1*
+  damage: "3d6*"
+  notes:
+    - shotgun
+    - double_barrel
+
+bangstick:
+  name: "Bangstick"
+  ap: 0
+  damage: "3d6"
+  notes:
+    - one_shot
+
+blunderbuss:
+  name: "Blunderbuss"
+  range: "10/20/40"
+  rof: 1
+  ap: 0
+  damage: "3d6*"
+  notes:
+    - shotgun
+    - very_slow_reload
+
+smg:
+  name: "Submachine Gun"
+  range: "12/24/48"
+  rof: 3
+  ap: 1
+  damage: "2d6"
+  notes:
+    - auto
+    - rapid_attack_ranged
+
+muzzle_loading_rifle:
+  name: "Muzzle-Loading Rifle"
+  range: "15/30/60"
+  rof: 1
+  ap: 2
+  damage: "2d8"
+  notes:
+    - very_slow_reload
+
+bolt_action_rifle:
+  name: "Bolt-Action Rifle"
+  range: "24/48/96"
+  rof: 1
+  ap: 2
+  damage: "2d8"
+  min_str: "d6"
+
+sniper_rifle:
+  name: "Sniper Rifle"
+  range: "30/60/120"
+  rof: 1
+  ap: 2
+  damage: "2d10"
+  min_str: d6
+  notes:
+    - scope
+    - bipod
+    - snapfire
+
+assault_rifle:
+  name: "Assault Rifle"
+  range: "24/48/96"
+  ap: 2
+  rof: 3
+  damage: "2d8+1"
+  min_str: d6
+  notes:
+    - auto
+
+light_machine_gun:
+  name: "Light Machine Gun"
+  range: "30/60/120"
+  rof: 3
+  ap: 2
+  damage: "2d8+1"
+  min_str: d6
+  notes:
+    - auto
+    - bipod
+    - no_movement
+
+medium_machine_gun:
+  name: "Medium Machine Gun"
+  range: "50/100/200"
+  rof: 3
+  ap: 2
+  damage: "2d10"
+  notes:
+    - auto
+    - mounted
+
+laser_pistol:
+  name: "Laser Pistol"
+  range: "15/30/60"
+  rof: 1
+  damage: "3d6"
+  notes:
+    - double_tap
+
+laser_rifle:
+  name: "Laser Rifle"
+  range: "30/60/120"
+  rof: 3
+  damage: "3d6"
+  notes:
+    - auto
+    - three_round_burst
+
+laser_machine_gun:
+  name: "Laser Machine Gun"
+  range: "50/100/200"
+  rof: 5
+  damage: "3d6"
+  notes:
+    - auto
+    - mounted
+
+grenade_launcher:
+  name: "Grenade Launcher"
+  range: "15/30/60"
+  rof: 1
+  ap: 0
+  damage: "3d8"
+  notes:
+    - medium_area_effect
+
+rocket_launcher:
+  name: "Rocket Launcher"
+  range: "24/48/96"
+  rof: 1
+  ap: 9
+  damage: "3d8"
+  notes:
+    - medium_area_effect
+
+flamethrower:
+  name: "Flamethrower"
+  range: "-"
+  rof: 1
+  damage: "2d10"
+  min_str: d8
+  notes:
+    - flamethrower
+    - ignores_armor
+
+tank_gun:
+  name: "Tank Gun"
+  range: 75/150/300
+  rof: 1
+  ap: 4
+  damage: "3d8"
+  notes:
+    - medium_area_effect
+
+grenade:
+  name: "Grenade"
+  range: "5/10/20"
+  damage: "3d6"
+  notes:
+    - medium_area_effect
+    - avoidable
+
